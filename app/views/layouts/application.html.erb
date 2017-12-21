@@ -10,11 +10,7 @@
   </head>
 
   <body>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
-    <!--nav bar-->
+     <!--nav bar-->
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -43,7 +39,14 @@
       </div>
     </nav>
 
+    <% if flash[:notice] %>
+      <div class="alert alert-success"><%= notice %></div>
+    <% end %>
+    <% if flash[:alert] %>    
+      <div class="alert alert-danger"><%= alert %></div>
+    <% end %>
+
     <%= yield %>
-    
+
   </body>
 </html>
