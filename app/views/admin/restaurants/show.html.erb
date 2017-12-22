@@ -1,6 +1,7 @@
 <div class="container">
   <div class="well well-sm">
     <h1><%= @restaurant.name %></h1>
+    <%= @restaurant.category.name %>
   </div>
   <div class="well">
     <%= image_tag @restaurant.image, class: "img-responsive center-block" %><br>
