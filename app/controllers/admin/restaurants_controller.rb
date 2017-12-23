@@ -1,6 +1,4 @@
-class Admin::RestaurantsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :authenticate_admin
+class Admin::RestaurantsController < Admin::BaseController
   before_action :set_restaurane, only: [:show, :edit, :update, :destroy]
   def index
     @restaurants = Restaurant.page(params[:page]).per(10)
