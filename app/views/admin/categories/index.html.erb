@@ -16,9 +16,9 @@
           <%= f.text_field :name, placeholder: "Category Name",  class: "form-control" %>
         </div>
         <%= f.submit class: "btn btn-primary" %>
-              <% if @category.errors.any? %>
-        <%= @category.errors.full_messages.to_sentence %>
-      <% end %>
+          <% if @category.errors.any? %>
+            <%= @category.errors.full_messages.to_sentence %>
+          <% end %>
         <% end %>
       </div>
 
@@ -29,6 +29,7 @@
           <tr>
             <th>#</th>
             <th>Category Name</th>
+            <th>#</th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +37,7 @@
           <tr>
             <th scope="row"><%= category.id %></th>
             <td><%= category.name %></td>
+            <td><%= link_to 'Edit', admin_categories_path(id: category.id) %></td>
           </tr>
           <% end %>
         </tbody>
